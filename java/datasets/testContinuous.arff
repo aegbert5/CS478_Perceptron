@@ -1,0 +1,13 @@
+@RELATION test
+
+@ATTRIBUTE x	Continuous
+@ATTRIBUTE y 	Continuous
+@ATTRIBUTE class 	Continuous
+
+@DATA
+0.0,0.0,1.0
+0.0,1.0,0.0
+1.0,0.0,0.0
+1.0,1.0,0.0
+%
+%
