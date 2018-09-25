@@ -18,42 +18,30 @@ public class Perceptron {
 	double learningRate;
 	double[] weights;
 	int numWeights;
-	int numInputs;
 
 	int classNumber; // Ranges from 1 to n
 	String className;
 
-	boolean debug =false;
+  // Constants
+	boolean debug = false;
+  boolean printWeights = false;
 
-	public Perceptron(Random rand, double learningRate, int numWeightsInputs, boolean quadratic, int classNumber, String className) {
+	public Perceptron(Random rand, double learningRate, int numWeights, int classNumber, String className) {
 		this.rand = rand;
 		this.learningRate = learningRate;
-
-		if (quadratic) {
-			this.numWeights = calculateNumWeights(numInputs, 2);
-		} else {
-			this.numWeights = calculateNumWeights(numInputs, 1);
-		}
-
 		this.weights = new double[numWeights];
-
+    this.numWeights = numWeights;
 		this.classNumber = classNumber;
 		this.className = className;
 
-		//Initialize weights to zero
+		//Initialize weights to random values between -1 and 1
 		for (int i = 0; i < numWeights; ++i) {
-			this.weights[i] = 0;
+			this.weights[i] = -1.0 + rand.nextInt(2);
 		}
 	}
 
-	
-
 	// Preforms one epoch of training on the dataset
 	public void train(double[] currentData, double targetClassNumber) throws Exception {
-
-		if (classNumber == 1) {
-			debug = true;
-		}
 
 		double net = 0;
 
@@ -87,7 +75,7 @@ public class Perceptron {
 			for (int j = 0; j < currentData.length; ++j) {
 				System.out.print(currentData[j] + ", ");
 			}
-			System.out.print("1.0 | ");
+		  System.out.print("| ");
 
 			for (int j = 0; j < weights.length; ++j) {
 				System.out.print(weights[j] + ", ");
@@ -96,11 +84,8 @@ public class Perceptron {
 			System.out.print("| " + currentTarget + " | " + output + " | ");
 		}
 
-		
-
+    // Change the weights if the output and current tager do not match
 		if (currentTarget != output) {
-
-			// Change the weights
 			for (int j = 0; j < currentData.length; ++j) {
 				double change = learningRate * (currentTarget - output) * currentData[j];
 				weightChange += Math.abs(change);
@@ -118,23 +103,25 @@ public class Perceptron {
 			weightChange += Math.abs(biasChange);
 			weights[weights.length - 1] = biasChange;
 		} else {
-
 			// DONT Change the weights
 			if (debug) {
 				System.out.print("No Change ");
-		
 			}
-		
 		}
 
 		if (debug) {
 			System.out.println("| Total Weight Change: " + weightChange);
 		}
-		// System.out.println("--------ssss-------------------");
-		// System.out.println("Threshold: " + minimumChangeThreshold);
-		// System.out.println("Total Weight Change: " + weightChange);
-		// System.out.println("Previous Weight Change: " + previousWeightChange);
-		// System.out.println("---------------------------");
+
+    if (printWeights) {
+      System.out.print("Perceptron " + classNumber + " (" + className + ") weights: | ");
+
+			for (int j = 0; j < currentData.length; ++j) {
+				System.out.print(weights[j] + ", ");
+			}
+
+      System.out.println();
+    }
 	}
 
 	public double predict(double[] features) {

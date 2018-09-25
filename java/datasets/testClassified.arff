@@ -6,8 +6,12 @@
 
 @DATA
 0.0,0.0,Blue
+-0.5,0.7,Blue
+-0.6,-0.5,Blue
+0.4,-0.6,Blue
 0.0,1.0,Green
 1.0,0.0,Green
-1.0,1.0,Green
+0.2,0.5,Green
+0.66,-0.1,Green
 %
 %
