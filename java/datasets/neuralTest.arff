@@ -1,0 +1,11 @@
+@RELATION test
+
+@ATTRIBUTE x	Continuous
+@ATTRIBUTE y 	Continuous
+@ATTRIBUTE class 	{Blue, Green}
+
+@DATA
+0.0,0.0,Green
+0.0,1.0,Blue
+%
+%
