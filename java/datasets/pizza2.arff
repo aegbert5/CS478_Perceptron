@@ -1,0 +1,18 @@
+
+@RELATION test1
+
+@ATTRIBUTE Meat {N, Y}
+@ATTRIBUTE Crust {Deep, Stuffed, Thin}
+@ATTRIBUTE Veg {N, Y}
+@ATTRIBUTE Quality {Bad, Good, Great}
+
+@DATA
+?, Thin, N, Great
+N, Deep, N, Bad
+N, Stuffed, Y, Good
+Y, Stuffed, Y, Great
+Y, Deep, N, Good
+?, Deep, Y, Great
+N, Thin, Y, Good
+Y, Deep, N, Good
+N, Thin, N, Bad

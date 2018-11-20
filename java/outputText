@@ -1,61 +1,10 @@
-
-Dataset name: datasets/vote2.arff
-Number of instances: 461
-Number of attributes: 17
-Learning algorithm: perceptron
-Evaluation method: random
-
-Calculating accuracy on a random hold-out set...
-Percentage used for training: 0.7
-Percentage used for testing: 0.30000000000000004
-
-Perceptron training in progress...
-# of Perceptrons: 2
-# of weights: 153
-| Inputs (w/ Bias) |   Weights   | Target | Net |  ^Weights   |
-Initial Accuracy: 0.6024844720496895
----------------------------
-Training Epoch: 1
-Accurracy: 0.9254658385093167
----------------------------
-Training Epoch: 2
-Accurracy: 0.968944099378882
----------------------------
-Training Epoch: 3
-Accurracy: 0.9565217391304348
----------------------------
-Training Epoch: 4
-Accurracy: 0.9813664596273292
----------------------------
-Training Epoch: 5
-Accurracy: 0.9658385093167702
----------------------------
-Training Epoch: 6
-Accurracy: 0.9782608695652174
----------------------------
-Training Epoch: 7
-Accurracy: 0.9875776397515528
----------------------------
-Training Epoch: 8
-Accurracy: 0.9875776397515528
----------------------------
-Training Epoch: 9
-Accurracy: 0.9347826086956522
----------------------------
-Training Epoch: 10
-Accurracy: 0.9875776397515528
----------------------------
-Training Epoch: 11
-Accurracy: 0.9720496894409938
----------------------------
-Training Epoch: 12
-Accurracy: 0.9720496894409938
----------------------------
-Training Epoch: 13
-Accurracy: 0.9906832298136646
----------------------------
-Training Epoch: 14
-Accurracy: 0.9906832298136646
-Time to train (in seconds): 0.114
-Training set accuracy: 0.9906832298136646
-Test set accuracy: 0.935251798561151
+0.9534883720930233
+0.9545454545454546
+0.813953488372093
+0.9318181818181818
+0.8604651162790697
+0.8863636363636364
+0.9069767441860465
+0.8863636363636364
+0.9069767441860465
+0.8863636363636364

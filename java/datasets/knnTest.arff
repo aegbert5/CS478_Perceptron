@@ -1,0 +1,7 @@
+@RELATION testKNN
+@ATTRIBUTE x Continuous
+@ATTRIBUTE target Continuous
+
+@DATA
+0.9, 7
+0.2, 7
